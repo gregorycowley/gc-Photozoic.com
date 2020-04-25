@@ -1,0 +1,13 @@
+_ARCHIVE
+_DEPLOY
+.git
+.DS_Store
+node_modules
+\#Public
+dist
+_TRASH
+_ARCHIVE
+.now
+.next/
+/Icon*
+package-lock.json

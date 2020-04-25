@@ -1,0 +1,487 @@
+@import url("normalize.css");
+@import url("skeleton.css");
+@import url("content.css");
+@import url("header.css");
+html,
+body {
+    background-color: #eee;
+    color: #888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    flex-grow: 1;
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 3.6rem;
+}
+
+h4 {
+    font-size: 3.0rem;
+}
+
+h5 {
+    font-size: 2.4rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: normal;
+    max-width: 700px;
+}
+
+p.sub-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: -1rem;
+}
+
+p.large-paragraph {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+p.small-paragraph {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+}
+
+#__next {
+    /* height: 100vh; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+main>article>section {
+    display: flex;
+}
+
+main>article {
+    /* border: thin solid red; */
+}
+
+footer {
+    border: thin solid green;
+    width: 900px;
+}
+
+
+/* Skeleton Overrides */
+
+.container {
+    max-width: 1400px;
+}
+
+
+/* Utility */
+
+.red {
+    border: thin solid red;
+}
+
+.blue {
+    border: thin solid blue;
+}
+
+.orange {
+    border: thin solid orange;
+}
+
+.dotted {
+    border: thin dotted orange;
+}
+
+
+/* Font */
+
+.mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.condensed {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/* Home */
+
+
+/* Portfolio Content */
+
+.row {
+    flex-direction: row;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    align-content: space-evenly;
+}
+
+.portfolio-item {
+    justify-self: stretch;
+    width: 300px;
+    height: 400px;
+    border: thin solid orange;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.column {
+    flex-direction: column;
+}
+
+div.image {
+    flex-grow: 1;
+    background-color: gray;
+    width: 400px;
+    height: 600px;
+}
+
+div.image-content {
+    flex-grow: 1;
+    background-color: yellow;
+    width: 400px;
+    height: 600px;
+    padding: 50px;
+}
+
+div.image.layout-1 {
+    flex-shrink: 0;
+    width: 600px;
+}
+
+div.image-content.layout-1 {
+    flex-shrink: 1;
+}
+
+div.image.layout-2 {
+    order: 2;
+}
+
+div.image-content.layout-2 {
+    order: 1;
+}
+
+div.image.layout-3 {}
+
+div.image-content.layout-3 {
+    display: none;
+}
+
+div.image.layout-4 {
+    height: 400px;
+    width: auto;
+}
+
+div.image-content.layout-4 {
+    height: 300px;
+    width: auto;
+}
+
+
+/* Mobile */
+
+.menu-overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    right: -100vw;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+.menu-overlay-nav {
+    box-shadow: -15px 0px 25px #666;
+    background-color: #eee;
+    /* Black fallback color */
+    height: 100%;
+    width: 85%;
+    right: 0;
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.menu-overlay-nav img {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.menu-overlay-nav .close-btn {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+}
+
+.menu-overlay-nav h3 {
+    margin: 5px 0 0 5px;
+    display: inline-block;
+    letter-spacing: .1px;
+}
+
+.menu-overlay-nav ul {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    height: 38%;
+    justify-content: space-between;
+}
+
+.menu-overlay-nav ul li {
+    font-size: 3rem;
+}
+
+
+/* ------------------------------------- */
+
+
+/* Mobile Menu */
+
+.mobile-menu {
+    position: fixed;
+    background: #f0f0f0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    transition: 0.5s;
+}
+
+.mobile-menu.hide {
+    top: 100vh;
+}
+
+.mobile-menu.show {
+    top: 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    color: #333;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 15px 0;
+    text-transform: uppercase;
+}
+
+.mobile-menu ul li:hover {
+    background: #e9e9e9;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-menu-toggle {
+    background: #666;
+    color: #ccc;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 25px;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+}
+
+.mobile-menu-toggle a {
+    text-decoration: none;
+    /* color: #333; */
+    height: 30px;
+}
+
+.mobile-menu-toggle .menu-icon {
+    display: block;
+    height: 30px;
+    z-index: 100;
+}
+
+
+/* ------------------------------------- */
+
+
+/* Site Specific Variances */
+
+header.testsite {
+    /* border: thin solid red; */
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+}
+
+header.testsite .logo {
+    width: 60px;
+    height: 60px;
+    margin: 2rem 1rem 0 3rem;
+}
+
+header.testsite .logo img {}
+
+header.testsite nav {
+    flex-grow: 1;
+    flex-shrink: 2;
+    display: flex;
+    flex-direction: column;
+    margin: 2.7rem 0 0 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+header.testsite nav h1 {
+    font-size: 3.4rem;
+    line-height: 1.2;
+    letter-spacing: 0.09rem;
+}
+
+header.testsite nav h2 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    letter-spacing: -.1rem;
+}
+
+header.testsite nav ul {
+    display: none;
+}
+
+header.testsite nav ul li {
+    margin: 0 10px 0 9px;
+}
+
+
+/* ------------------------------------- */
+
+
+/* Hero */
+
+.hero-item {
+    padding: 2rem;
+}
+
+
+/* ------------------------------------- */
+
+
+/* Text Column */
+
+.text-column {
+    width: 85%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ------------------------------------- */
+
+
+/* Image Gallery */
+
+.image-gallery ul {
+    list-style: none;
+}
+
+.image-gallery-item {}
+
+
+/* ------------------------------------- */
+
+
+/* Larger than phablet */
+
+@media (min-width: 550px) {
+    h1 {
+        /* font-size: 2rem; */
+    }
+    h2 {
+        /* font-size: 2rem; */
+    }
+    h3 {
+        /* font-size: 3.6rem; */
+    }
+    h4 {
+        /* font-size: 3.0rem; */
+    }
+    h5 {
+        /* font-size: 2.4rem; */
+    }
+    h6 {
+        /* font-size: 1.5rem; */
+    }
+}

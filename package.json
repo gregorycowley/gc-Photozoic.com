@@ -1,0 +1,25 @@
+{
+    "name": "photozoic.com",
+    "version": "1.0.0",
+    "description": "Photozoic Gregory Cowley Project Description website",
+    "main": "index.html",
+    "scripts": {
+        "dev:photozoic": "next -p 3003",
+        "build:photozoic": "next build",
+        "start": "next start",
+        "export:photozoic": "next export  -o ./_DEPLOY",
+        "deploy:photozoic": "now deploy -A now.json _DEPLOY",
+        "debug": "NODE_OPTIONS=--inspect next",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Gregory Cowley",
+    "license": "ISC",
+    "dependencies": {
+        "@zeit/next-css": "^1.0.1",
+        "next": "^9.2.1",
+        "raw-loader": "^4.0.0",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-markdown": "^4.3.1"
+    }
+}
