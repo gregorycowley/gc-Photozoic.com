@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+/**
+ * Page Header Layout
+ * @param {*} props 
+ */
+
 class Header extends React.Component {
   constructor(props) {
     super(props);

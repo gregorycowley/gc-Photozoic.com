@@ -1,6 +1,5 @@
 import Head from "next/head";
 
-
 export default function Meta(props) {
   return (
     <Head>
@@ -10,15 +9,15 @@ export default function Meta(props) {
         {props.siteTitle}
       </title>
       <meta name="Description" content={props.description} />
-      {/* <link
+      <link
         href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,500,700&display=swap"
         rel="stylesheet"
-      /> */}
-      {/* <link rel="stylesheet" href="/css/normalize.css" />
+      />
+      <link rel="stylesheet" href="/css/normalize.css" />
       <link rel="stylesheet" href="/css/skeleton.css" />
       <link rel="stylesheet" href="/css/style.css" />
       <link rel="stylesheet" href="/css/header.css" />
-      <link rel="stylesheet" href="/css/content.css" /> */}
+      <link rel="stylesheet" href="/css/content.css" />
     </Head>
   );
 }

@@ -1,8 +1,12 @@
-import Header from "./Header";
-import Meta from './Meta'
+import { Header, Meta } from "../index";
 
-// import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
+
+/**
+ * SummaryPage Layout
+ * @param {*} props 
+ */
+
 
 class SummaryPage extends React.Component {
 
@@ -16,8 +20,6 @@ class SummaryPage extends React.Component {
         this.classes = props.pathname == "info" && "info_page";
         this.backgroundColor = props.bgColor && props.bgColor;
         this.color = props.pathname == "info" && 'white';
-
-
         // console.log( this.props );
 
     }

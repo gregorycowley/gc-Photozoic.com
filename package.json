@@ -3,23 +3,39 @@
     "version": "1.0.0",
     "description": "Photozoic Gregory Cowley Project Description website",
     "main": "index.html",
+    "repository": "https://github.com/gregorycowley/gc-Photozoic.com",
     "scripts": {
-        "dev:photozoic": "next -p 3003",
-        "build:photozoic": "next build",
+        "dev": "next -p 3003",
+        "build": "next build",
         "start": "next start",
-        "export:photozoic": "next export  -o ./_DEPLOY",
-        "deploy:photozoic": "now deploy -A now.json _DEPLOY",
+        "export:": "next export",
+        "deploy:": "now deploy -A now.json",
         "debug": "NODE_OPTIONS=--inspect next",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
     },
     "author": "Gregory Cowley",
     "license": "ISC",
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
-        "next": "^9.2.1",
-        "raw-loader": "^4.0.0",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "react-markdown": "^4.3.1"
+        "glob": "^7.1.6",
+        "gray-matter": "^4.0.2",
+        "imagemin": "^7.0.1",
+        "imagemin-jpegtran": "^6.0.0",
+        "imagemin-pngquant": "^8.0.0",
+        "next": "^9.3.5",
+        "next-compose-plugins": "^2.2.0",
+        "next-optimized-images": "^2.6.0",
+        "raw-loader": "^4.0.1",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-markdown": "^4.3.1",
+        "responsive-loader": "^1.2.0",
+        "sharp": "^0.23.4"
+    },
+    "devDependencies": {
+        "file-loader": "^5.0.2",
+        "url-loader": "^3.0.0"
     }
 }

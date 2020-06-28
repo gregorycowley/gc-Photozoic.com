@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
+
+/**
+ * Footer Layout
+ * @param {*} props 
+ */
+
 class Footer extends Component{
     render(){
         let jhonData = this.props.jhonData;
@@ -24,9 +30,6 @@ class Footer extends Component{
                                 }
                             </ul>
                         </Fade>
-                        
-                        <h6>Made with love by <a href="https://themeforest.net/user/blazethemez">Blazethemez</a></h6>
-                        <p>© 2019 Blazethemez - All Rights Reserved</p>
                     </div>
                 </div>
             </section>

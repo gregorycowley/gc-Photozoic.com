@@ -1,38 +1,30 @@
-// import matter from 'gray-matter'
-// import ReactMarkdown from 'react-markdown'
+import matter from "gray-matter";
+import ReactMarkdown from "react-markdown";
 
-import React from "react";
-import SummaryPage from "../components/SummaryPage";
+import { Layout, TextContent } from "../components/index";
 
-class Index extends React.Component {
-  constructor(props) {
-    super(props);
-    const markdownBody = props.content
-    const frontmatter = props.data
-  }
+const Index = props => {
+  
+  const frontmatter = props.data;
+  const markdownBody = props.content;
 
-  render() {
-    return <SummaryPage {...this.props} />;
-  }
-}
+  return (
+    <Layout>
+      <TextContent>
+        <ReactMarkdown source={markdownBody} />
+      </TextContent>
+    </Layout>
+  );
+};
 
 export default Index;
 
-Index.getInitialProps = async function () {
-    const siteConfig = await import(`../data/config.json`);
-
-    const headInfo = await import(`../content/head-info.md`);
-    const contactInfo = await import(`../content/contact-info.md`);
-
-    const metadata = '';//matter(content.default);
-    return {
-        ...metadata,
-        siteConfig,
-        headInfo,
-        contactInfo,
-        contentOne,
-        contentTwo,
-        contentThree
-    };
+Index.getInitialProps = async function() {
+  const siteConfig = await import(`../data/config.json`);
+  const content = await import(`../pages-link/default.md`);
+  const metadata = matter(content.default);
+  return {
+    ...metadata,
+    ...siteConfig
+  };
 };
-
